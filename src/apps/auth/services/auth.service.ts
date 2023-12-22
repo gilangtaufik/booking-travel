@@ -50,7 +50,8 @@ export class AuthService {
           await Passenger.create({
             userId : user.userId,
             name : body.firstName,
-            phone : body.phone,
+            phone : body?.phone,
+            createdAt : new Date()
           },{transaction})
         })
     }

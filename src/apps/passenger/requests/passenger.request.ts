@@ -1,11 +1,11 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class PassengerRequest {
     @IsNotEmpty()
     @IsString()
     name: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     phone: string;
   }

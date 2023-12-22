@@ -3,15 +3,16 @@ import {
   AllowNull, AutoIncrement, Column, Default, HasMany, HasOne, PrimaryKey, Scopes, Table,
 } from 'sequelize-typescript';
 import { Model } from 'base-repo';
+import { IsOptional } from 'class-validator';
 
 interface IModelOptional {
   userId : number
   passengerId : number;
+  phone: string;
 }
 
 export interface IModel extends Partial<IUnfilledAtt>, Partial<IModelOptional>, Partial<IUnfilledBy> {
   name: string;
-  phone: string;
 }
 
 export type IModelCreate = IModel & Partial<IModelOptional>;
@@ -48,7 +49,6 @@ export class Passenger
   @Column({ field: 'name' })
   name: string;
 
-  @AllowNull(false)
   @Column({ field: 'phone' })
   phone: string;
 

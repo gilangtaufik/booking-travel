@@ -21,7 +21,6 @@ export const up: Migration = async ({ context: queryInterface }) => {
       },
       phone : {
         type : DataType.STRING,
-        allowNull : false
       },
       created_at: DataType.DATE,
       updated_at: DataType.DATE,
